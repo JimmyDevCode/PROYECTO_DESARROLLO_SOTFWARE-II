@@ -1,5 +1,6 @@
 package com.ferrosac.mapper;
 
+import com.ferrosac.dto.request.MarcaRequest;
 import com.ferrosac.dto.response.MarcaResponse;
 import com.ferrosac.entity.Marca;
 import org.springframework.beans.BeanUtils;

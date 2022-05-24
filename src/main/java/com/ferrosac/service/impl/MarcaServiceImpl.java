@@ -37,6 +37,7 @@ public class MarcaServiceImpl implements IMarcaService {
     @Override
     public MarcaResponse update(Long id, MarcaRequest marcaRequest) {
         Marca marca = getMarca(id);
+        marca.setNombre(marcaRequest.getNombre());
         return EntityMapper.converToEntity2DTO(iMarcaRepository.save(marca));
     }
 

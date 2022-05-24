@@ -3,6 +3,7 @@ package com.ferrosac.entity;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +17,7 @@ import javax.persistence.Table;
 @Setter
 @Entity
 @SQLDelete(sql = "UPDATE marca SET estado = true WHERE id_marca=?")
+@Where(clause = "estado = false")
 public class Marca {
 
     @Id
