@@ -13,5 +13,5 @@ public interface IMarcaService {
 
     MarcaResponse update(Long id, MarcaRequest marcaRequest);
 
-    void delete (Long id);
+    void delete(Long id);
 }

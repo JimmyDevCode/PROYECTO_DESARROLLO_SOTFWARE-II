@@ -25,13 +25,13 @@ public class MarcaController {
     IMarcaService iMarcaService;
 
     @PostMapping("/marcas")
-    public ResponseEntity<MarcaResponse> save(@RequestBody MarcaRequest marcaRequest){
+    public ResponseEntity<MarcaResponse> save(@RequestBody MarcaRequest marcaRequest) {
         MarcaResponse marcaResponse = iMarcaService.save(marcaRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(marcaResponse);
     }
 
     @GetMapping("/marcas")
-    public ResponseEntity<List<MarcaResponse>> getAll(){
+    public ResponseEntity<List<MarcaResponse>> getAll() {
         List<MarcaResponse> marcaResponse = iMarcaService.getAllMarcas();
         return ResponseEntity.status(HttpStatus.OK).body(marcaResponse);
     }
@@ -43,7 +43,7 @@ public class MarcaController {
     }
 
     @DeleteMapping("marcas/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id){
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         this.iMarcaService.delete(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
