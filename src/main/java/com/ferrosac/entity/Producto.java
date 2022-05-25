@@ -57,7 +57,7 @@ public class Producto {
     private Categoria categoria;
 
     @Column(name = "id_categoria", nullable = false)
-    private Long idCetegoria;
+    private Long idCategoria;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "id_marca", insertable = false, updatable = false)
