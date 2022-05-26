@@ -5,11 +5,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/*@Getter
+@Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor*/
+@NoArgsConstructor
 public class ProductoRequest {
 
+    private String codigo;
+    private String nombre;
+    private Integer stock;
+    private String descripcion;
+    private Long idCategoria;
+    private Long idMarca;
 
 }

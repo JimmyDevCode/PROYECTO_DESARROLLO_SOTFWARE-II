@@ -42,7 +42,7 @@ public class CategoriaController {
         return ResponseEntity.status(HttpStatus.OK).body(categoriaResponse);
     }
 
-    @DeleteMapping("categorias/{id}")
+    @DeleteMapping("/categorias/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         this.iCategoriaService.delete(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();

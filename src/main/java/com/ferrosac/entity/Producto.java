@@ -3,6 +3,8 @@ package com.ferrosac.entity;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.annotations.Where;
@@ -39,7 +41,7 @@ public class Producto {
     private String nombre;
 
     @Column(name = "stock", nullable = false, columnDefinition = "integer default 0")
-    private int stock;
+    private Integer stock;
 
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
@@ -52,14 +54,15 @@ public class Producto {
     @UpdateTimestamp
     private Timestamp fechaModificacion;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
 
     @Column(name = "id_categoria", nullable = false)
     private Long idCategoria;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST})
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "id_marca", insertable = false, updatable = false)
     private Marca marca;
 

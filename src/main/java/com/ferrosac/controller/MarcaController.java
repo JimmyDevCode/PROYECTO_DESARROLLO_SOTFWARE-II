@@ -42,7 +42,7 @@ public class MarcaController {
         return ResponseEntity.status(HttpStatus.OK).body(marcaResponse);
     }
 
-    @DeleteMapping("marcas/{id}")
+    @DeleteMapping("/marcas/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         this.iMarcaService.delete(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
