@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,6 +20,7 @@ import java.sql.Timestamp;
 @Setter
 @Entity
 @SQLDelete(sql = "UPDATE categoria SET estado = true WHERE id_categoria=?")
+@Where(clause = "estado = false")
 public class Categoria {
 
     @Id
