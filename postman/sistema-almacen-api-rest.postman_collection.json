@@ -318,6 +318,33 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Consultar Stock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/productos/stock?nombre=REGLA DE METAL 2222",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"stock"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "REGLA DE METAL 2222"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}

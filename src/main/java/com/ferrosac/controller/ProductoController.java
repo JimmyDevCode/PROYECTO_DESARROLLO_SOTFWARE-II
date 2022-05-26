@@ -2,6 +2,7 @@ package com.ferrosac.controller;
 
 import com.ferrosac.dto.request.ProductoRequest;
 import com.ferrosac.dto.response.ProductoResponse;
+import com.ferrosac.entity.Producto;
 import com.ferrosac.service.IProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -46,5 +48,11 @@ public class ProductoController {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         this.iProductoService.delete(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @GetMapping("/productos/stock")
+    public ResponseEntity<ProductoResponse> getStock(@RequestParam String nombre) {
+        ProductoResponse productoResponse = iProductoService.getStock(nombre);
+        return ResponseEntity.status(HttpStatus.OK).body(productoResponse);
     }
 }

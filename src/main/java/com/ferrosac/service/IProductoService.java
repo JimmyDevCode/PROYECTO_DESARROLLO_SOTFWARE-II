@@ -13,5 +13,7 @@ public interface IProductoService {
 
     ProductoResponse update(Long id, ProductoRequest productoRequest);
 
+    ProductoResponse getStock(String nombre);
+
     void delete(Long id);
 }

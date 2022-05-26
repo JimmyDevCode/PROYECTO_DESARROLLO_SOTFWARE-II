@@ -41,6 +41,13 @@ public class ProductoMapper {
         return productoResponse;
     }
 
+    public ProductoResponse convertToEntity2DTOStock(Producto producto) {
+        ProductoResponse productoResponse = new ProductoResponse();
+        productoResponse.setStock(producto.getStock());
+        return productoResponse;
+    }
+
+
     public List<ProductoResponse> convertToEntity2DTOList(List<Producto> productoList) {
         List<ProductoResponse> productoResponses = new ArrayList<>();
         for (Producto producto: productoList) {

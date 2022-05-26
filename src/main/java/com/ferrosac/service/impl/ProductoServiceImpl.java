@@ -49,6 +49,12 @@ public class ProductoServiceImpl implements IProductoService {
     }
 
     @Override
+    public ProductoResponse getStock(String nombre) {
+        Producto producto = iProductoRepository.findByNombre(nombre);
+        return productoMapper.convertToEntity2DTOStock(producto);
+    }
+
+    @Override
     public void delete(Long id) {
         this.iProductoRepository.deleteById(id);
     }
