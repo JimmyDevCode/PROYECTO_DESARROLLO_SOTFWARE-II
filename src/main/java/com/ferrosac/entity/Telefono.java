@@ -35,6 +35,13 @@ public class Telefono {
     @UpdateTimestamp
     private Timestamp fechaModificacion;
 
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @JoinColumn(name = "id_proveedor", insertable = false, updatable = false)
+    private Proveedor proveedor;
+
+    @Column(name = "id_proveedor", nullable = false)
+    private Long idProveedor;
+
     @Column(name = "estado", nullable = false)
     private boolean estado = Boolean.FALSE;
 }

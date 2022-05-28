@@ -16,7 +16,7 @@ import java.sql.Timestamp;
 @Entity
 @SQLDelete(sql = "UPDATE proveedor SET estado = true WHERE id_proveedor=?")
 @Where(clause = "estado = false")
-public class Proovedor {
+public class Proveedor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

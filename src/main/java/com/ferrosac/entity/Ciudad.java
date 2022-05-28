@@ -37,7 +37,7 @@ public class Ciudad {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "id_departamento", insertable = false, updatable = false)
-    private Departamento ciudad;
+    private Departamento departamento;
 
     @Column(name = "id_departamento", nullable = false)
     private Long idDepartamento;
