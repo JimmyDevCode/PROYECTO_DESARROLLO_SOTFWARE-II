@@ -40,8 +40,8 @@ public class ProductoServiceImpl implements IProductoService {
         Producto producto = getProducto(id);
         producto.setCodigo(productoRequest.getCodigo());
         producto.setNombre(productoRequest.getNombre());
-        producto.setCodigo(productoRequest.getCodigo());
-        producto.setCodigo(productoRequest.getCodigo());
+        producto.setStock(productoRequest.getStock());
+        producto.setDescripcion(productoRequest.getDescripcion());
         producto.setIdCategoria(productoRequest.getIdCategoria());
         producto.setIdMarca(productoRequest.getIdMarca());
 
